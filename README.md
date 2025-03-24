@@ -1,57 +1,63 @@
-🏗️ Microfrontends Vite + React
+# 🏗️ Microfrontends con Vite + React
 
-🛠️ Tecnologías Usadas
+## 🛠️ Tecnologías Base Usadas
+- [Vite](https://vitejs.dev/) ⚡
+- [React](https://react.dev/)
+- [Node.js](https://nodejs.org/) 18.20.7+ npm
 
-Vite ⚡
+Este repositorio contiene dos microfrontends desarrollados con **Vite + React**. Cada microfrontend es independiente y puede ejecutarse por separado.
 
-React
+## 📂 Estructura del Proyecto
+```
+mi-repo/
+├── microfrontend1/
+│   ├── package.json
+│   ├── src/
+│   ├── public/
+│   └── vite.config.js
+├── microfrontend2/
+│   ├── package.json
+│   ├── src/
+│   ├── public/
+│   └── vite.config.js
+├── package.json (si usas npm workspaces)
+├── README.md
+└── .gitignore
+```
 
-Node.js 18.20.7 + npm
+## 🚀 Instalación
+Por cada microfrontend, instala las dependencias:
+```sh
+npm install
+```
 
-📂 Estructura del Proyecto
+## 📦 Construcción para desarrollo
 
-repos/
-
-
-├── consumer/
-
-    ├── package.json
-
-    ├── src/
-
-    ├── public/
-
-    └── vite.config.js
-
-
-├── exposer/
-
-    ├── package.json
-
-    ├── src/
-
-    ├── public/
-
-    └── vite.config.js
-
-
-🚀 Instalación
-
-Por cada microfrontend instala las dependencias con npm i
-
-📦 Construcción para desarrollo
-
-Primero Para generar los archivos estáticos y poder ser conumidos desde la app consumer se debe ejecutar en la app que expone
+### 🏗️ Generar archivos estáticos para la app que expone
+Para que la aplicación pueda ser consumida, primero se debe ejecutar en la app que expone:
+```sh
 npm run build
 npm run preview
+```
 
-Por último en la app que consume
+### 🏃‍♂️ Ejecutar la app que consume
+Por último, en la app que consume:
+```sh
 npm run dev
+```
 
+## 📌 Nota!
 
-📌 Notas
+### 📦 Correr en desarrollo y tener hot reload en la app que expone
+Si quieres ver los cambios en la app que expone sin necesidad de hacer build manualmente:
+```sh
+npm run dev
+```
+⚠️ **Los cambios no se verán en la app que consume**.
 
-📦 Correro en desarrollo y tener hot reload en la app que expone
-npm run dev (los cambios no se veran en la app que consume) para ver los cambios ejecutar
+Para reflejar los cambios en la app que consume, debes ejecutar nuevamente:
+```sh
 npm run build
 npm run preview
+```
+
