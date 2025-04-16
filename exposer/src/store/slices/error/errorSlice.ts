@@ -10,7 +10,7 @@ const initialState: IErrorState = {
   message: "",
 };
 
-export const errorSlice = createSlice({
+export const ErrorSlice = createSlice({
   name: "error",
   initialState,
   reducers: {
@@ -27,5 +27,5 @@ export const errorSlice = createSlice({
 });
 
 export const { changeErrorState, changeMessageErrorState, clearErrorState } =
-  errorSlice.actions;
-export default errorSlice.reducer;
+  ErrorSlice.actions;
+export default ErrorSlice.reducer;

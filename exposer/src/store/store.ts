@@ -1,16 +1,16 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { useDispatch, useSelector } from "react-redux";
-import { errorSlice } from "./slices/error/errorSlice";
+import { ErrorSlice } from "./slices/error/ErrorSlice";
 
-export const store = configureStore({
+export const Store = configureStore({
   reducer: {
-    errorState: errorSlice.reducer,
+    errorState: ErrorSlice.reducer,
   },
 });
 
 // Tipos para TypeScript
-export type RootState = ReturnType<typeof store.getState>;
-export type AppDispatch = typeof store.dispatch;
+export type RootState = ReturnType<typeof Store.getState>;
+export type AppDispatch = typeof Store.dispatch;
 
 // Hooks personalizados para Redux
 export const useAppDispatch = () => useDispatch<AppDispatch>();

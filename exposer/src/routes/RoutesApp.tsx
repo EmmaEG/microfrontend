@@ -1,14 +1,14 @@
 import * as React from "react";
-import { store, useAppDispatch, useAppSelector } from "../src/store/store";
+import { useAppDispatch, useAppSelector } from "../store/Store";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { clearErrorState } from "../src/store/slices/error/errorSlice";
-import { Provider } from "react-redux";
-import App from "../src/App";
-import TestView from "../src/views/TestView";
-import NotFound from "../src/views/NotFound";
+import { clearErrorState } from "../store/slices/error/ErrorSlice";
+import App from "../../src/App";
+import TestView from "../../src/views/TestView";
+import NotFound from "../../src/views/NotFound";
+import StoreProvider from "../store/StoreProvider";
 
 // Exportamos los hooks
-export { useAppDispatch, useAppSelector, store } from "../src/store/store";
+export { useAppDispatch, useAppSelector } from "../store/Store";
 
 interface IErrorWrapper {
   children: React.ReactNode;
@@ -47,7 +47,7 @@ const ErrorWrapper: React.FC<IErrorWrapper> = (props) => {
 
 export const RoutesApp: React.FC = () => {
   return (
-    <Provider store={store}>
+    <StoreProvider>
       <ErrorWrapper>
         <Router>
           <Switch>
@@ -57,7 +57,7 @@ export const RoutesApp: React.FC = () => {
           </Switch>
         </Router>
       </ErrorWrapper>
-    </Provider>
+    </StoreProvider>
   );
 };
 
