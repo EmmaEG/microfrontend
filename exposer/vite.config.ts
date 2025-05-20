@@ -11,7 +11,7 @@ export default defineConfig({
       filename: "remoteEntry.js",
       exposes: {
         "./ButtonEx": "./src/components/ButtonEx.tsx",
-        "./RoutesApp": "./routes/RoutesApp.tsx",
+        "./RoutesApp": "./src/routes/RoutesApp.tsx",
       },
       shared: {
         "react": {

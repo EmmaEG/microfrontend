@@ -2,8 +2,8 @@ import { useHistory } from "react-router-dom";
 import {
   changeErrorState,
   changeMessageErrorState,
-} from "./store/slices/error/ErrorSlice";
-import { useAppDispatch, useAppSelector } from "./store/Store";
+} from "./store/slices/error/ErrorSlice-tofix";
+import { useAppDispatch, useAppSelector } from "./store/Store-tofix";
 
 function App() {
   const history = useHistory();

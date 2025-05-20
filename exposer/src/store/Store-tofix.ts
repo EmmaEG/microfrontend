@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { useDispatch, useSelector } from "react-redux";
-import { ErrorSlice } from "./slices/error/ErrorSlice";
+import { ErrorSlice } from "./slices/error/ErrorSlice-tofix";
 
 export const Store = configureStore({
   reducer: {
