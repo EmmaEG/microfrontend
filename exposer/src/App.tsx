@@ -1,4 +1,4 @@
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   changeErrorState,
   changeMessageErrorState,
@@ -6,7 +6,7 @@ import {
 import { useAppDispatch, useAppSelector } from "./store/Store";
 
 function App() {
-  const history = useHistory();
+  const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const errorState = useAppSelector((state) => state.errorState);
 
@@ -37,7 +37,7 @@ function App() {
             </button>
             <button
               onClick={() => {
-                history.push("/testview");
+                navigate("/testview");
               }}
               style={{ marginTop: 20 }}
             >

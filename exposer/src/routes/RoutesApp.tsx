@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useAppDispatch, useAppSelector } from "../store/Store";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { clearErrorState } from "../store/slices/error/ErrorSlice";
 import App from "../../src/App";
 import TestView from "../../src/views/TestView";
@@ -50,11 +50,11 @@ export const RoutesApp: React.FC = () => {
     <StoreProvider>
       <ErrorWrapper>
         <Router>
-          <Switch>
-            <Route exact path="/" component={App} />
-            <Route exact path="/testview" component={TestView} />
-            <Route path="*" component={NotFound} />
-          </Switch>
+          <Routes>
+            <Route path="/" element={<App />} />
+            <Route path="/testview" element={<TestView />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
         </Router>
       </ErrorWrapper>
     </StoreProvider>

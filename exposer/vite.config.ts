@@ -12,6 +12,7 @@ export default defineConfig({
       exposes: {
         "./ButtonEx": "./src/components/ButtonEx.tsx",
         "./RoutesApp": "./src/routes/RoutesApp.tsx",
+        "./ExposerRoutingShared": "./src/routes/ExposerRoutingShared",
       },
       shared: {
         "react": {
@@ -19,9 +20,6 @@ export default defineConfig({
         },
         "react-dom": {
           version: packageJson.dependencies["react-dom"],
-        },
-        "react-router-dom": {
-          version: packageJson.dependencies["react-router-dom"],
         },
         "react-redux": {
           version: packageJson.dependencies["react-redux"],

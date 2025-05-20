@@ -1,7 +1,7 @@
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const NotFound = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
 
   return (
     <div style={{ textAlign: "center", marginTop: "50px" }}>
@@ -9,7 +9,7 @@ export const NotFound = () => {
       <p>Página no encontrada</p>
       <button
         onClick={() => {
-          history.push("/");
+          navigate("/");
         }}
       >
         Volver
