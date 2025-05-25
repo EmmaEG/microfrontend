@@ -4,6 +4,7 @@ import StoreProvider from "../store/StoreProvider";
 
 // Vistas
 import { TestView } from "../views/TestView";
+import App from "../App";
 
 // Página inicial de AgroOficial (puede agregarse contenido si es necesario)
 const ConsumerHome = () => {
@@ -28,6 +29,14 @@ const router = createMemoryRouter(
           element: <ConsumerHome />,
         },
         {
+          path: "exposer-main-view",
+          element: (
+            <StoreProvider>
+              <App />
+            </StoreProvider>
+          ),
+        },
+        {
           path: "exposer-test-view",
           element: (
             <StoreProvider>
@@ -39,13 +48,17 @@ const router = createMemoryRouter(
     },
   ],
   {
-    initialEntries: [location.pathname.replace("/agro-oficial", "") || "/"],
+    initialEntries: [location.pathname.replace("/exposer", "") || "/"],
   }
 );
 
 // Componente raíz del microfrontend
 const ExposerRoutingShared = () => {
-  return <RouterProvider router={router} />;
+  return (
+    <StoreProvider>
+      <RouterProvider router={router} />
+    </StoreProvider>
+  );
 };
 
 export default ExposerRoutingShared;

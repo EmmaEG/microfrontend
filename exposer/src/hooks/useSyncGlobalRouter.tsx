@@ -6,10 +6,10 @@ export type MicrofrontendConfig = {
     name: string;
 };
  
-export const microfrontends: MicrofrontendConfig[] = [
+export const Microfrontend: MicrofrontendConfig[] = [
     {
-        basepath: "/agro-oficial",
-        name: "AgroOficialMF",
+        basepath: "/exposer",
+        name: "ExposerApp",
     },
 ];
  
@@ -20,7 +20,7 @@ const useSyncGlobalRouter = () => {
     const navigate = useNavigate();
  
     React.useEffect(() => {
-        const basepath = "/agro-oficial";
+        const basepath = "/exposer";
  
         // Emitir evento al host
         if (location.pathname.startsWith("/")) {
