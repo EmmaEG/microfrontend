@@ -19,8 +19,8 @@ export const AppBar = () => {
     >
       Consumer App
       <div style={{ flex: 1 }} />
-      <button style={{ marginRight: 100 }} onClick={()=>navigate('exposer/exposer-test-view')}>
-        Navigate To TestView
+      <button style={{ marginRight: 100 }} onClick={()=>navigate('exposer')}>
+        Navigate To Exposer App
       </button>
     </div>
   );

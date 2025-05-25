@@ -1,17 +1,12 @@
-import { createBrowserRouter, Outlet } from "react-router-dom";
-import { Microfrontend } from "./Microfrontend";
-import { MicrofrontendWrapper } from "./components/MicrofrontendWrapper";
-import { AppBar } from "./AppBar";
+import { createBrowserRouter } from "react-router-dom";
+import { Microfrontend } from "../Microfrontend";
+import { MicrofrontendWrapper } from "../components/MicrofrontendWrapper";
+import { Layout } from "../Layout";
 
 const routes = [
   {
     path: "/",
-    element: (
-      <>
-        <AppBar />
-        <Outlet />
-      </>
-    ),
+    element: <Layout />,
     children: [
       { index: true, element: <></> },
       // Mapear cada microfrontend a una ruta
